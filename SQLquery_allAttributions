@@ -1,0 +1,16 @@
+SELECT S."SourceID", S."AbbrevName", B."AttributionComposerID", C."Surname"
+
+FROM webdb."Sources" S, webdb."Composers" C, webdb."Pieces_Sources" B
+
+WHERE B."AttributionComposerID"=C."ComposerID"
+and B."SourceID"=S."SourceID"
+
+and S."SourceID" in 
+
+(SELECT S."SourceID"
+FROM webdb."Sources"S, webdb."Pieces_Sources"C
+WHERE S."SourceID" = C."SourceID"
+and C."AttributionComposerID"=8)
+
+ORDER by 
+C."ComposerID"
