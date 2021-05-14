@@ -1,8 +1,7 @@
 # josquin
  data for Josquin paper at KVNM meeting 2021-05-15 
 
-local database: PostgresQL
-visualisations: gephi 
+local database: PostgresQL; visualisations: gephi 
 
 1) SQL query used to generate results
 2) results from 1), with some statistics added
